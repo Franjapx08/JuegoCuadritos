@@ -1,5 +1,5 @@
-//let bg = 0
-let pium = []
+
+let shot = []
 let y = 0
 let y2 = 0
 function setup() {
@@ -7,39 +7,44 @@ function setup() {
 }
 
 function draw() {
-	fill('blue')
-	background('white')
-	if (keyIsDown(UP_ARROW))
+	fill('gray')
+	background('black')
+	if (keyIsDown(UP_ARROW)){
+
 		y2--
-	if (keyIsDown(DOWN_ARROW))
+	}
+	if (keyIsDown(DOWN_ARROW)){
+
 		y2++
-	if (keyIsDown(87))
+	}
+	if (keyIsDown(87)){
+		
 		y-- 
-	if (keyIsDown(83))
+	}
+	if (keyIsDown(83)){
+
 		y++
+	}
 	rect(200, y, 80, 100)
 	rect(800, y2, 80, 100)
-	for (let i=0; i<pium.length;i++) {
-		fill(pium[i].c)
-		rect(pium[i].x++, y, pium[i].t, 20)
-		pium[i].move()
+	for (let i=0; i<shot.length;i++) {
+		fill(shot[i].c)
+		rect(shot[i].x++, y, shot[i].t, 20)
+		shot[i].move()
 		
 	}
 }
 
 function keyPressed(){
 	if (keyCode  == UP_ARROW) {
-		//bg = bg == 255 ? 0 : 255
-		y--
+			y--
 	}else if (keyCode == DOWN_ARROW) {
 		y++
 	
 	}else if (keyCode == ENTER){
-		pium.push(disparo())
-		console.log("disparp")
+		shot.push(disparo())
 	}
-	console.log(y)
-	console.log(y2)
+	
 }
 
 function disparo(){
@@ -64,5 +69,5 @@ function disparo(){
 		}
 	}
 	
-	//return c
+	
 }
