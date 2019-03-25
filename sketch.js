@@ -9,14 +9,8 @@ function setup() {
 function draw() {
 	fill('gray')
 	background('black')
-	if (keyIsDown(UP_ARROW)){
 
-		y2--
-	}
-	if (keyIsDown(DOWN_ARROW)){
 
-		y2++
-	}
 	if (keyIsDown(87)){
 		
 		y-- 
@@ -26,7 +20,6 @@ function draw() {
 		y++
 	}
 	rect(200, y, 80, 100)
-	rect(800, y2, 80, 100)
 	for (let i=0; i<shot.length;i++) {
 		fill(shot[i].c)
 		rect(shot[i].x++, y, shot[i].t, 20)
